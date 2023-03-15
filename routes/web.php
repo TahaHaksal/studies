@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Ex2Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,3 +52,10 @@ Route::prefix('/ex1')->group(function () {
     });
 });
 //Exercise 1
+
+//Exercise 2
+Route::prefix('/ex2')->group(function () {
+    Route::get('/index', [Ex2Controller::class, 'index']);
+    Route::get('/var-ex/{id}', [Ex2Controller::class, 'varEx'])->where('id', '[0-9]+');
+});
+//Exercise 2
