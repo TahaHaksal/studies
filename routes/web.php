@@ -57,5 +57,8 @@ Route::prefix('/ex1')->group(function () {
 Route::prefix('/ex2')->group(function () {
     Route::get('/index', [Ex2Controller::class, 'index']);
     Route::get('/var-ex/{id}', [Ex2Controller::class, 'varEx'])->where('id', '[0-9]+');
+    //Ex3
+    Route::get('/multi-var', [Ex2Controller::class, 'multiVar']);
+    //Ex3
 });
 //Exercise 2
