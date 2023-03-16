@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Ex2Controller;
 use App\Http\Controllers\Ex4Controller;
+use App\Http\Controllers\Ex5Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,3 +74,10 @@ Route::prefix('/ex4')->group(function () {
     Route::get('/delete-post/{id}', [Ex4Controller::class, 'deletePost'])->where('id', '[0-9]+');
 });
 //Exercise 4
+
+
+//Exercise 5
+Route::prefix('/ex5')->group(function () {
+    Route::get('/string-manip', [Ex5Controller::class, 'index']);
+});
+//Exercise 5
