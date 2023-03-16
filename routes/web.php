@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Ex2Controller;
+use App\Http\Controllers\Ex4Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +63,13 @@ Route::prefix('/ex2')->group(function () {
     //Ex3
 });
 //Exercise 2
+
+//Exercise 4
+Route::prefix('/ex4')->group(function () {
+    Route::get('/get-posts', [Ex4Controller::class, 'getAllPosts']);
+    Route::get('/get-post-by-id/{id}', [Ex4Controller::class, 'getPostById'])->where('id', '[0-9]+');
+    Route::get('/insert-post', [Ex4Controller::class, 'insertPost']);
+    Route::get('/update-post', [Ex4Controller::class, 'updatePost']);
+    Route::get('/delete-post/{id}', [Ex4Controller::class, 'deletePost'])->where('id', '[0-9]+');
+});
+//Exercise 4
