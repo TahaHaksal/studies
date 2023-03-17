@@ -16,8 +16,8 @@
   <input type="text" id="password" name="password" value=""><br><br>
   @error('password')
   <span class="text-danger"> {{$message}}</span>
-    @enderror
-    <br>
+  @enderror
+  <br>
   <input type="submit" value="Submit">
 </form>
 </body>

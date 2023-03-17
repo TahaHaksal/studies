@@ -93,18 +93,25 @@ Route::prefix('/ex7')->group(function (){
 });
 //Exercise 7
 
-//Exercis 10
+//Exercise 10
 Route::prefix('/ex10')->group(function (){
     Route::get('/storeSession', [Ex10Controller::class, 'storeSessionData']);
     Route::get('/deleteSession', [Ex10Controller::class, 'deleteSessionData']);
     Route::get('/getSession', [Ex10Controller::class, 'getSession']);
 });
-//Exercis 10
+//Exercise 10
 
 //Exercise 11
 Route::prefix('/ex11')->group(function () {
+    Route::get('/storeRandom', [Ex11Controller::class, 'storeRandomPost']);
     Route::get('/store', [Ex11Controller::class, 'storePost']);
     Route::get('/allPost', [Ex11Controller::class, 'getAllPosts']);
+    Route::post('/store', [Ex11Controller::class, 'storeMethodPost'])->name('post.addsubmit');
+    Route::get('/single-post/{id}', [Ex11Controller::class, 'singlePost']);
+    Route::get('/delete-post/{id}', [Ex11Controller::class, 'deletePost']);
+    Route::get('/edit-post/{id}', [Ex11Controller::class, 'editPost']);
+    Route::post('/edit-post/{id}', [Ex11Controller::class, 'editPostSave']);
+
 
 });
 //Exercise 11
