@@ -6,6 +6,7 @@ use App\Http\Controllers\Ex2Controller;
 use App\Http\Controllers\Ex4Controller;
 use App\Http\Controllers\Ex5Controller;
 use App\Http\Controllers\Ex7Controller;
+use App\Http\Middleware\ex9Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,7 +86,7 @@ Route::prefix('/ex5')->group(function () {
 
 //Exercise 7
 Route::prefix('/ex7')->group(function (){
-    Route::get('/login', [Ex7Controller::class, 'index']);
+    Route::get('/login', [Ex7Controller::class, 'index'])->middleware('test');
     Route::post('/submit', [Ex7Controller::class, 'submit']);
 });
 //Exercise 7
