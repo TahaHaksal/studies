@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Ex10Controller;
+use App\Http\Controllers\Ex11Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Ex2Controller;
@@ -99,3 +100,11 @@ Route::prefix('/ex10')->group(function (){
     Route::get('/getSession', [Ex10Controller::class, 'getSession']);
 });
 //Exercis 10
+
+//Exercise 11
+Route::prefix('/ex11')->group(function () {
+    Route::get('/store', [Ex11Controller::class, 'storePost']);
+    Route::get('/allPost', [Ex11Controller::class, 'getAllPosts']);
+
+});
+//Exercise 11
