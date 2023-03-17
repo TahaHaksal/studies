@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Ex2Controller;
 use App\Http\Controllers\Ex4Controller;
 use App\Http\Controllers\Ex5Controller;
+use App\Http\Controllers\Ex7Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,3 +82,10 @@ Route::prefix('/ex5')->group(function () {
     Route::get('/string-manip', [Ex5Controller::class, 'index']);
 });
 //Exercise 5
+
+//Exercise 7
+Route::prefix('/ex7')->group(function (){
+    Route::get('/login', [Ex7Controller::class, 'index']);
+    Route::post('/submit', [Ex7Controller::class, 'submit']);
+});
+//Exercise 7
