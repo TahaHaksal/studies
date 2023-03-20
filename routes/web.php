@@ -119,8 +119,9 @@ Route::prefix('/ex11')->group(function () {
 
 //Exercise13
 Route::prefix('/ex13')->group(function () {
-    Route::get('/join', [Ex13Controller::class, 'innerJoinClause']);
-    Route::get('/left-join', [Ex13Controller::class, 'leftJoin']);
-    Route::get('/right-join', [Ex13Controller::class, 'rightJoin']);
+    Route::get('/join', [Ex11Controller::class, 'innerJoinClause']);
+    Route::get('/left-join', [Ex11Controller::class, 'leftJoin']);
+    Route::get('/right-join', [Ex11Controller::class, 'rightJoin']);
+    Route::get('/all', [Ex11Controller::class, 'getAllModel']);
 });
 //Exercise13
