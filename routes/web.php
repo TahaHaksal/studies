@@ -3,6 +3,7 @@
 use App\Http\Controllers\Ex10Controller;
 use App\Http\Controllers\Ex11Controller;
 use App\Http\Controllers\Ex13Controller;
+use App\Http\Controllers\Ex16Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Ex2Controller;
@@ -142,3 +143,10 @@ Route::prefix('/ex15')->group(function () {
     });
 });
 //Exercise15
+
+//Exercise16
+Route::prefix('/ex16')->group(function () {
+    Route::get('/pagination', [Ex16Controller::class, 'pagination']);
+
+});
+//Exercise16
