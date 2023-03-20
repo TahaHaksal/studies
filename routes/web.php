@@ -1,16 +1,17 @@
 <?php
 
-use App\Http\Controllers\Ex10Controller;
-use App\Http\Controllers\Ex11Controller;
-use App\Http\Controllers\Ex13Controller;
-use App\Http\Controllers\Ex16Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\ex9Middleware;
 use App\Http\Controllers\Ex2Controller;
 use App\Http\Controllers\Ex4Controller;
 use App\Http\Controllers\Ex5Controller;
 use App\Http\Controllers\Ex7Controller;
-use App\Http\Middleware\ex9Middleware;
+use App\Http\Controllers\Ex10Controller;
+use App\Http\Controllers\Ex11Controller;
+use App\Http\Controllers\Ex13Controller;
+use App\Http\Controllers\Ex16Controller;
+use App\Http\Controllers\Ex17Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -147,6 +148,12 @@ Route::prefix('/ex15')->group(function () {
 //Exercise16
 Route::prefix('/ex16')->group(function () {
     Route::get('/pagination', [Ex16Controller::class, 'pagination']);
-
 });
 //Exercise16
+
+//Exercise17
+Route::prefix('/ex17')->group(function () {
+    Route::get('/upload', [Ex17Controller::class, 'uploadForm']);
+    Route::post('/upload', [Ex17Controller::class, 'uploadFile']);
+});
+//Exercise17
