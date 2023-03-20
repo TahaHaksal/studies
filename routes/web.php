@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\PaymentGateway\Payment;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\ex9Middleware;
 use App\Http\Controllers\Ex2Controller;
@@ -12,6 +14,7 @@ use App\Http\Controllers\Ex11Controller;
 use App\Http\Controllers\Ex13Controller;
 use App\Http\Controllers\Ex16Controller;
 use App\Http\Controllers\Ex17Controller;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -157,3 +160,14 @@ Route::prefix('/ex17')->group(function () {
     Route::post('/upload', [Ex17Controller::class, 'uploadFile']);
 });
 //Exercise17
+
+
+//Exercise18
+Route::get('/facade', function () {
+    Payment::process();
+});
+//Exercise18
+
+//Exercise19
+Route::get('/mail', [MailController::class, 'sendEmail']);
+//Exercise19
