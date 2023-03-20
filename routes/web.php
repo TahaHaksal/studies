@@ -125,3 +125,20 @@ Route::prefix('/ex13')->group(function () {
     Route::get('/all', [Ex11Controller::class, 'getAllModel']);
 });
 //Exercise13
+
+//Exercise15
+Route::prefix('/ex15')->group(function () {
+    Route::get('/blade', function () {
+        return view('ex14view');
+    });
+    Route::get('/home', function () {
+        return view('index');
+    });
+    Route::get('/about', function () {
+        return view('about');
+    });
+    Route::get('/contact', function () {
+        return view('contact');
+    });
+});
+//Exercise15
