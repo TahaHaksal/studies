@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Ex10Controller;
 use App\Http\Controllers\Ex11Controller;
+use App\Http\Controllers\Ex13Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Ex2Controller;
@@ -115,3 +116,11 @@ Route::prefix('/ex11')->group(function () {
 
 });
 //Exercise 11
+
+//Exercise13
+Route::prefix('/ex13')->group(function () {
+    Route::get('/join', [Ex13Controller::class, 'innerJoinClause']);
+    Route::get('/left-join', [Ex13Controller::class, 'leftJoin']);
+    Route::get('/right-join', [Ex13Controller::class, 'rightJoin']);
+});
+//Exercise13
