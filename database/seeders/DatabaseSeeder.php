@@ -22,11 +22,11 @@ class DatabaseSeeder extends Seeder
         // $this->call([
         //     PostTableSeeder::class,
         // ]);
-        foreach(range(1,1000) as $indes){
-            DB::table('users')->insert([
+        foreach(range(1,100) as $index){
+            DB::table('students')->insert([
                 'name' => fake()->name(),
+                'phone' => fake()->phoneNumber(),
                 'email' => fake()->email(),
-                'password' => password_hash(fake()->password(), PASSWORD_DEFAULT),
             ]);
         }
     }

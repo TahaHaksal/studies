@@ -15,6 +15,7 @@ use App\Http\Controllers\Ex13Controller;
 use App\Http\Controllers\Ex16Controller;
 use App\Http\Controllers\Ex17Controller;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -171,3 +172,19 @@ Route::get('/facade', function () {
 //Exercise19
 Route::get('/mail', [MailController::class, 'sendEmail']);
 //Exercise19
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+Route::get('/get-students', [StudentController::class, 'getStudents']);
+
+Route::get('/get-student/{id}', [StudentController::class, 'getStudent']);
+
+Route::get('/get-students-between/{id1}/{id2}', [StudentController::class, 'getStudentsinBetween'])->where('id1', '[0-9]+')->where('id2', '[0-9]+');
